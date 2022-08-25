@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+            border: 2px solid red;
+            margin:auto;   /* to take it box into center of the page*/
+            padding:120px;
+            box-sizing: border-box;
+            background-color: beige;
+        }
+        .jj{
+        background: orange;
+        }
+    </style>
+</head>
+<body>
+   <center><h1>Welcome to login page</h1></center> 
+   <hr>
+   <div>
+    Username<br>
+    <input type="text" name="text" placeholder="enter the name" onfocus="fc(this)"  onblur="br(this)" id="username" oninvalid="alert('fill the box')" required>
+    <br><br>
+
+    Password <br>
+    <input type="text" name="text" placeholder="enter the password" onfocus="fc(this)" onblur="br(this)" oninvalid="alert('fill the box')"  id="password"required>
+    <br><br>
+
+    <button  id="btn" > Login</button>
+    <button id="btn1"> Signup</button>
+
+   </div>
+   <script>
+//    login button
+
+    function br(element){
+     element.style.background="white"
+    }
+    document.getElementById("btn").addEventListener("mouseover",function(){
+        this.classList.toggle("jj");
+    })
+
+
+    function fc(element){
+        element.style.background="gray";
+    }
+ 
+    document.getElementById("btn").addEventListener("click",abc)
+
+    function abc(){
+    var uname= document.getElementById("username").value;
+    var pword=document.getElementById("password").value;
+                                // console.log(uname);
+    if (uname=="Ankit" && pword==123){
+        window.location="index2.html"
+    }else{
+        alert("login failed")
+    }
+    }
+
+    // signup button
+    document.getElementById("btn1").addEventListener("click",function(){
+        document.write("Username=Ankit  ,  password=123")
+    })
+    document.getElementById("btn1").addEventListener("mouseover",function(){
+        this.classList.toggle("jj");
+    })
+
+   </script>
+</body>
+</html>
